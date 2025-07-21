@@ -1,0 +1,27 @@
+.user-profile-container {
+    padding: 10%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    margin: 0 auto;
+}
+
+.user-details-container {
+    margin-bottom: 20px;
+    border: 1px solid #870404;
+}
+.name-container {
+    display: table-row;
+    flex-direction: row;
+    align-items: center;
+}
+
+.name-section,
+.email-section {
+    margin-top: 10px;
+
+}
+
+button {
+    margin-left: 10px;
+}

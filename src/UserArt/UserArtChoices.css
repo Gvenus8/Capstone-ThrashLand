@@ -1,0 +1,19 @@
+.user-art-choices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-evenly;
+    gap: 20px;
+    background-color: #242424;
+    border: 5px solid blueviolet;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-art-choices h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: blueviolet;
+}
+

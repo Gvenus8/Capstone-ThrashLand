@@ -1,0 +1,67 @@
+.admin-profile-container {
+    padding: 20px;
+
+    border: 5px solid  rgb(242, 0, 0);
+    border-radius: 5px;
+}
+.admin-profile-container h2 {
+    color: var(--offWhite);
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: rgb(242, 0, 0);
+    border-bottom: 5px solid rgb(239, 237, 231);
+}
+.admin-profile-container h3 {
+    color: var(--offWhite);
+    font-size: 24px;
+    margin-bottom: 20px;
+    background-color:  rgb(242, 0, 0);
+    font-weight: bold;
+    background-color: ;
+
+}
+.admin-profile-container h4 {
+    color: var(--offWhite);
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.admin-actions {
+    margin-bottom: 20px;
+}
+li {
+    word-spacing: 10px;
+    rgb(242, 0, 0)
+    
+}
+
+
+
+.user-item,
+.art-item {
+ 
+    color:  rgb(237, 237, 237);
+    text-align: left;
+    margin-left: 10px;
+}
+
+.user-item:last-child,
+.art-item:last-child {
+    border-bottom: none;
+}
+
+.delete-admin {
+    background-color: transparent;
+    border: none;
+    color: red;
+    cursor: pointer;
+    text-align:right;
+    margin-right: 65px;
+}
+
+.delete-admin:hover {
+    text-decoration: underline;
+}
+
