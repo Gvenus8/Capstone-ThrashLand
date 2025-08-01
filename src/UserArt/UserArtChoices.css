@@ -1,19 +1,25 @@
 .user-art-choices {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    justify-content: space-evenly;
-    gap: 20px;
-    background-color: #242424;
-    border: 5px solid blueviolet;
-    border-radius: 8px;
+    display: flex; 
+    flex-direction: column;  
+    width: 80%;
+    height: 80%;
+    background-color: transparent;
+    border: 5px solid #ff3131;
+    border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px; 
+    gap: 0; 
+    margin: 0 auto;  
 }
 
 .user-art-choices h2 {
-    margin-bottom: 20px;
     font-size: 24px;
     color: blueviolet;
+    margin: 0 0 10px 0;  
+    text-align: center;  
 }
 
+.user-art-choices > * {
+    margin: 0;  
+    padding: 5px 0; 
+}

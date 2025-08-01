@@ -1,5 +1,6 @@
 import { PostChoices } from "../../fetches/ChoicePost"
 import { useNavigate } from "react-router-dom";
+import "./saveBtn.css"
 
 export const SaveChoicesButton = ({selectedColor, selectedMusic, selectedEmotion, selectedAdjective, title}) => {
     const navigate = useNavigate();

@@ -5,24 +5,26 @@ import { getUserByEmail, createUser } from "../../fetches/UserFetches"
 
 
 
-export const Register = (props) => {
+export const Register = () => {
   const [customer, setCustomer] = useState({
     email: "",
-    Name: "",
-   
+    name: "",
+    totalScore: 0,
+    bio: ""  
   })
   let navigate = useNavigate()
 
   const registerNewUser = () => {
     createUser(customer).then((createdUser) => {
-      if (createdUser.hasOwnProperty("id")) {
+     if (createdUser.id) {
         localStorage.setItem(
           "thrashland_user",
           JSON.stringify({
             id: createdUser.id,
-            Name: createdUser.Name,
+            name: createdUser.name,
             email: createdUser.email,
-            
+            totalScore: createdUser.totalScore || 0,
+
           })
         )
 
@@ -31,8 +33,8 @@ export const Register = (props) => {
     })
   }
 
-  const handleRegister = (e) => {
-    e.preventDefault()
+  const handleRegister = (event) => {
+    event.preventDefault()
     getUserByEmail(customer.email).then((response) => {
       if (response.length > 0) {
         window.alert("Account with that email address already exists")
@@ -42,23 +44,23 @@ export const Register = (props) => {
     })
   }
 
-  const updateCustomer = (evt) => {
+  const updateCustomer = (event) => {
     const copy = { ...customer }
-    copy[evt.target.id] = evt.target.value
+    copy[event.target.id] = event.target.value
     setCustomer(copy)
   }
 
   return (
     <main style={{ textAlign: "center" }}>
       <form className="form-login" onSubmit={handleRegister}>
-        <h1>ThrashLand</h1>
-        <h2>Please Register</h2>
-        <fieldset>
+        <h1></h1>
+        <h2>JOIN US TODAY</h2>
+        <fieldset className="lemon">
           <div className="form-group">
             <input
               onChange={updateCustomer}
               type="text"
-              id="Name"
+              id="name"
               className="form-control"
               placeholder="Enter your name"
               required
@@ -66,7 +68,7 @@ export const Register = (props) => {
             />
           </div>
         </fieldset>
-        <fieldset>
+        <fieldset className="lemon2">
           <div className="form-group">
             <input
               onChange={updateCustomer}
@@ -79,7 +81,7 @@ export const Register = (props) => {
           </div>
         </fieldset>
        
-        <fieldset>
+        <fieldset className="lemon">
           <div className="form-group">
             <button className="login-btn btn-info" type="submit">
               Register

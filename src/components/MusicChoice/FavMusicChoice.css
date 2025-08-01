@@ -1,0 +1,39 @@
+.favmusic {
+ 
+    border: 5px inset #ff3131;
+    border-radius: 12px;
+   
+}
+.music-choice-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    text-align: center;
+    color: #ff3131;
+    
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}   
+
+.music-choice-input{
+   
+    background-color: transparent;
+    border: 5px solid blueviolet;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    
+    color: var(#ff3131);
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.music-choice-label {
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;    
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "./ViewProfileBtn.css";
 
 export const ViewProfileBtn = ({selectedColor, selectedMusic, selectedEmotion, selectedAdjective, title, }) => {
     const navigate = useNavigate();
@@ -9,7 +10,7 @@ export const ViewProfileBtn = ({selectedColor, selectedMusic, selectedEmotion, s
     }
 
     return (
-            <div className="conatainer-view-btn" >
+            <div className="viewbtn" >
                 <button
                     className="view-btn btn-info"
                     type="order"

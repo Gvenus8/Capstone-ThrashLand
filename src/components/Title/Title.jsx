@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { SaveChoicesButton } from "../Buttons/ChoiceSaveBtn";
+import "./Title.css";
 
 export const AddTitle= () => {
     const location = useLocation();
@@ -9,14 +10,14 @@ export const AddTitle= () => {
     
     return(
         <>
-            <div className="form-group">
-                <h3>Give Your Monster A Name</h3>
+            <div className="title-group">
+                <h3>Give Your THRASHER a Name</h3>
                     <input
                         type="text"
                         value={title}
                         onChange={(event) => setTitle(event.target.value)}
                         className="form-text"
-                        placeholder="name your beast!"
+                        placeholder="NAME YOUR THRASHER!"
                         required
                     />
                 <SaveChoicesButton

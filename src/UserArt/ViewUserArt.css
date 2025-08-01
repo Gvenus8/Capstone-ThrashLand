@@ -1,0 +1,99 @@
+@keyframes lc3 {
+    0% {
+        color: #ff3131;
+    }
+
+    20% {
+        color: white;
+    }
+
+    40% {
+        color: #f6ff00;
+    }
+    60% {
+        color: #31ff53;
+    }
+    80% {
+        color: #6b31ff;
+    }
+    100% {
+        color: #ff3131;
+    }
+}
+@keyframes lc4 {
+    0% {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: white;
+    }
+      100% {
+        background-color: transparent;
+    }
+
+}
+
+.view-art-container {
+    display: flex;
+    border: 5px solid #ff3131;
+    border-radius: 20px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start; 
+    height: 700px;
+    background-color: rgb(46, 44, 44);
+    animation: lc4 8s infinite;
+    width: 80%;
+    margin: 0% auto;
+    padding: 20px; 
+}
+.view-art-content {
+    border: #ff3131 5px solid;
+    border-radius: 20px;
+    width: 80%;
+    height: 650px;
+    background-color: black;
+    margin: 0% auto;
+}
+.view-art-title {
+    font-size: 50px;
+    color: #ff3131;
+    text-align: center;
+    width: 100%;
+    border: #ff3131 2px solid;
+    border-radius: 10px;
+    background-color: #ff3131; 
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    animation: lc3 8s infinite;
+}
+
+.monster-image {
+    width: 475px;
+    height: 475px;
+    object-fit: contain;
+    border-radius: 8px; 
+    flex-shrink: 0;  
+    align-self: flex-start;  
+}
+
+
+.monster-bio {
+    flex: 1;  
+    font-size: 30px;
+    line-height: 1.0;
+    color: white;
+    align-self: flex-start; 
+    padding: 10px; 
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 0%;
+    margin-top: -15%;
+    width: 100%;
+    animation: lc3 8s infinite;
+}

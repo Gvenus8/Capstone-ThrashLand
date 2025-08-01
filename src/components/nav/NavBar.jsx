@@ -18,7 +18,10 @@ export const NavBar = () => {
                 <Link to = "/userArtChoice">Create+</Link>
             </li>
             <li className = "navbar-item">
-                <Link to="/brickbreaker">Play</Link>
+                <Link to="/arcade">Arcade</Link>
+            </li>
+             <li className = "navbar-item">
+                <Link to="/community">Stats</Link>
             </li>
             <li className = "navbar-item">
                 <Link to = "/profile">Profile</Link>

@@ -1,18 +1,25 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
 export const Home = () => {
+    const navigate = useNavigate();
     return (
-        <div>
-            <h5>Welcome to ThrashLand</h5>
+        <div className="home-container">
+            <h5></h5>
             <div className="login-buttons">
-                        <Link to="/login" className="btn primary">
-                            Login
-                        </Link>
-                        <Link to="/register" className="btn secondary">
-                            Sign Up
-                        </Link>
-                    </div>
+                         <button 
+                    className="btn-primary btn-info" 
+                    onClick={() => navigate("/login")}
+                >
+                    Login
+                </button>
+                <button 
+                    className="btn-secondary btn-info" 
+                    onClick={() => navigate("/register")}
+                >
+                    Register
+                </button>
+            </div>
         </div>
     );
 };

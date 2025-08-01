@@ -8,6 +8,9 @@ import { AddTitle } from "../Title/Title.jsx";
 import { AdminProfile } from "../AdminProfile/AdminProfile.jsx";
 import { Header } from "../header/header.jsx";
 import { Play } from "../play/play.jsx";
+import { Footer } from "../footer/footer.jsx";
+import { Arcade } from "../Arcade/Arcade.jsx";
+import { Community } from "../community/Community.jsx";
 
 export const AdminView = ({ currentUser }) => {
    return (
@@ -16,8 +19,9 @@ export const AdminView = ({ currentUser }) => {
             element={
                <>
                   <Header />
-                  <AdminNavBar />
                   <Outlet />
+                  <AdminNavBar />
+                  <Footer />  
                </>
             }
          >
@@ -35,6 +39,8 @@ export const AdminView = ({ currentUser }) => {
             <Route path="/add-Title" element={<AddTitle />} />
             <Route path="/welcome" element={<Welcome />} />
             <Route path="/brickbreaker" element={<Play />} />
+            <Route path="/arcade" element={<Arcade />} />
+            <Route path ="/community" element= {<Community />} />
          </Route>
       </Routes>
    )

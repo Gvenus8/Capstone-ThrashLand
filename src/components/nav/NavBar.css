@@ -1,33 +1,47 @@
   .navBar {
     display: flex;
+    width: 75%;
+    height: 40px;
+    margin: 0 auto;
     justify-content: space-between;
     align-items: center;
     background-color: var(--primary);
-    padding: 10px 20px;
+    padding: 10px 30px;
     font-family: "Quicksand", sans-serif;
-    color: var(--offWhite);
-    border: 2px solid blueviolet;
+    color: #ff3131;
+    border: 6px inset #ff3131;
+    border-radius: 95px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
   }
 
   .navbar-item {
     flex-basis: 20%;
     list-style-type: none;
     text-align: center;
-    color: var(--offWhite);
+    color: var(#ff3131);
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
   }
 
   .navbar-link {
     text-decoration: none;
-    font-family: "Quicksand", sans-serif;
-    letter-spacing: 1px;
-    border: 1px solid red;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    border: 15px solid red;
+
   }
 
   .navbar-logout {
     margin-left: auto;
+    background-color: #ff3131;
   }
 
   .navbar-link:hover {
-    color: var(--primary);
+    color: white;
   }

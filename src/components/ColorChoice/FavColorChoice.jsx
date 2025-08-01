@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { getColorChoice } from "../../fetches/ChoiceFetches"
+import "./FavColorChoice.css"
 
 export const FavColorChoice = ({onColorChange}) => {
     const [allColorChoices, setAllColorChoices] = useState([]);
@@ -14,10 +15,10 @@ export const FavColorChoice = ({onColorChange}) => {
     return (
     <>
         <div className="favcolor">
-            <h2>Whats Your Favorite Color?</h2>
+            <div className="color-choice-title">WHO IS SUPREME?</div>
             <div>
                 {allColorChoices.map((color) => (
-                    <label key={color.id}>
+                    <label key={color.id} className="color-choice-label">
                         <input
                             className="color-choice-input"
                             type="radio"

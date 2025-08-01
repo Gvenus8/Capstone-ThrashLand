@@ -28,7 +28,11 @@ export const UserArtChoices = () => {
         <>
         <div className="user-art-choices"> 
 
-            <h2> Build Your Monster</h2>
+            <h2> you have the power to create you own THRASHER.
+                Answer the questions and let the metal gods
+                birth your unique THRASHER, and welcome you to the 
+                brotherhood of steel.
+            </h2>
             
             <FavMusicChoice onMusicChange = {handleMusicChange}/>
             <FavColorChoice onColorChange = {handleColorChange}/>

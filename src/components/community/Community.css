@@ -1,0 +1,89 @@
+.community-container {
+   width: 80%;
+   height: 700px;
+   border: 5px solid #ff3131;
+   border-radius: 20px;
+   margin: 0px auto;
+   overflow-y: scroll;
+}
+.community-header {
+    width: 30%;
+    height: 180px;
+    border: 5px solid #ff3131;
+    border-radius: 20px;
+    margin: 30px auto;
+    background-image: url("../images/wel2.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 50px;
+}
+.h1 {
+    text-align: center;
+    color: #ff3131;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-size: 110px;
+    border: 15px solid #ff3131;
+    border-radius: 120px;
+    width: 80%;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 10%;
+    animation:lct 1s infinite;
+}
+
+.user-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+   
+ 
+    border-radius: 20px;
+    height: 350px;
+    overflow-y: scroll;
+}
+
+.user-table th, .user-table td {
+    padding: 12px 15px;
+    border: 1px solid #ff3131;
+    font-family: "Bitcount Prop Double", system-ui;
+    
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color:#ff3131;
+    font-size: 40px;
+    text-align: center;
+    margin: 0% auto;
+    overflow-y: scroll;
+    height: 50px;
+}
+tr
+
+.user-table th {
+    background-color: #080404;
+    text-align: center;
+}
+
+.user-table tr:nth-child(even) {
+    background-color: #000000;
+}
+
+.user-table tr:hover {
+    background-color: #f1f1f1;
+}
+.th {
+    font-weight: bold;
+    color: #ff3131;
+   
+}
+.tr {
+    color: #ff3131;
+    ;
+;
+     font-family: "Bitcount Prop Double", system-ui;
+    
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}

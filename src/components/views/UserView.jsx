@@ -6,7 +6,10 @@ import { ViewArt } from "../../UserArt/ViewUserArt.jsx";
 import { UserProfile } from "../UserProfile/UserProfile.jsx";
 import { AddTitle } from "../Title/Title.jsx";
 import { Header } from "../header/header.jsx";
-import { Play } from "../play/play.jsx";
+import { Play } from "../play/Play.jsx";
+import { Footer } from "../footer/footer.jsx";
+import { Community } from "../Community/Community.jsx";  
+import { Arcade } from "../Arcade/Arcade.jsx";
 
 export const UserView = ({ currentUser }) => {
    return (
@@ -15,8 +18,9 @@ export const UserView = ({ currentUser }) => {
             element={
                <>
                   <Header />
-                  <NavBar />
                   <Outlet />
+                  <NavBar />
+                  <Footer />  
                </>
             }
          >
@@ -31,8 +35,10 @@ export const UserView = ({ currentUser }) => {
             <Route path="/view-art" element={<ViewArt />} />
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/add-Title" element={<AddTitle />} />
+            <Route path="/arcade" element={<Arcade/>} />
             <Route path="/brickbreaker" element={<Play />} />
             <Route path="/welcome" element={<Welcome />} />
+            <Route path ="/community" element= {<Community />} />
          </Route>
       </Routes>
    )

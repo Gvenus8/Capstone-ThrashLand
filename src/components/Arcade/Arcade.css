@@ -1,0 +1,110 @@
+.arcade {
+    width: 1000px; 
+    min-width: 1000px; 
+    height: 700px;
+    border: 5px solid #ff3131;
+    border-radius: 20px;
+    margin: 0 auto;
+    position: relative;
+    flex-shrink: 0; 
+}
+
+.arcade-header {
+    position: absolute;
+    top: 20px;
+    left: 160px;
+    color: white;
+    font-size: 125px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    animation: lct 1s infinite;
+    white-space: nowrap;
+    flex-shrink: 0; 
+}
+.arcade-container {
+    display: flex;
+    flex-direction: row;
+    border: 5px solid #ff3131;
+    border-radius: 20px;
+    width: 900px; 
+    min-width: 900px;
+    height: 630px;
+    margin: 30px auto; 
+    flex-shrink: 0; 
+   
+}
+.arcade-image-container {
+    width: 630px; 
+    min-width: 630px;
+    height: 630px;
+    background-image: url('/images/arc.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+    position: relative; 
+ 
+}
+
+
+.arcade-image {
+    width: 410px; 
+    height: 246px; 
+    background-image: url('/images/ThrashLand.png');
+    background-size: cover;
+    margin: 151px auto;
+    position: absolute; 
+    left: 50%;
+    top: 25px; 
+    transform: translateX(-50%); 
+    flex-shrink: 0; 
+}
+
+.arcade-description {
+    width: 270px;
+    height: 630px;
+    border-left: 5px solid #ff3131;
+    flex-shrink: 0; 
+     overflow-y: scroll;
+
+}
+
+.Pitmaster-button {
+    background-image: url('/images/box2.png');
+    width: 210px;
+    height: 285px;
+    border: 5px solid #ff3131;
+    flex-shrink: 0;
+    min-width: 210px; 
+    min-height: 285px; 
+}
+.shredbutton{
+    background-image: url('/images/shredderhawk.png');
+    width: 210px;
+    height: 285px;
+    border: 5px solid #ff3131;
+    flex-shrink: 0; 
+    min-width: 210px;
+    min-height: 285px; 
+}
+.micdrop-button{
+    background-image: url('/images/micdrop.png');
+    width: 210px;
+    height: 285px;
+    border: 5px solid #ff3131;
+    flex-shrink: 0;
+    min-width: 210px; 
+    min-height: 285px; 
+}
+.arcade-text {
+    color: #ff3131;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+    white-space: nowrap; 
+}

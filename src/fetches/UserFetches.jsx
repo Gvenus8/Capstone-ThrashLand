@@ -28,10 +28,10 @@ export const getUserArtById = (userId) => {
 
 export const expandUserChoices = async (selectedMusic, selectedColor, selectedEmotion, selectedAdjective) => {
   const [music, color, emotion, adjective] = await Promise.all([
-    fetch(`http://localhost:8088/favMusicChoices/${selectedMusic}`).then(r => r.json()),
-    fetch(`http://localhost:8088/favColorChoices/${selectedColor}`).then(r => r.json()),
-    fetch(`http://localhost:8088/currentEmotionChoices/${selectedEmotion}`).then(r => r.json()),
-    fetch(`http://localhost:8088/adjectiveChoices/${selectedAdjective}`).then(r => r.json())
+    fetch(`http://localhost:8088/favMusicChoices/${selectedMusic}`).then(res => res.json()),
+    fetch(`http://localhost:8088/favColorChoices/${selectedColor}`).then(res=> res.json()),
+    fetch(`http://localhost:8088/currentEmotionChoices/${selectedEmotion}`).then(res => res.json()),
+    fetch(`http://localhost:8088/adjectiveChoices/${selectedAdjective}`).then(res => res.json())
   ]);
 
   return { music, color, emotion, adjective };

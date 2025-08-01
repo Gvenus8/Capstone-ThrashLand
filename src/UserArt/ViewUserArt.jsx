@@ -3,7 +3,7 @@ import { getMonsterById } from "../fetches/MonsterFetch"
 import { useLocation } from "react-router-dom";
 import { ViewProfileBtn } from "../components/Buttons/ViewProfileBtn";
 import { expandUserChoices } from "../fetches/UserFetches";
-
+import "./ViewUserArt.css"
 export const ViewArt = () => {
     
     const location = useLocation();
@@ -45,19 +45,19 @@ export const ViewArt = () => {
     return (
         <>
             <div className="view-art-container">
-                <h2><strong>{title}</strong> </h2>
-                <div>
+                <div className="view-art-content">
+                <div className="view-art-title"><strong>{title}</strong> </div>
                     <img className="monster-image" src={monster.url} alt="user-game-piece"/>
                     <div className = "monster-bio">
                         
                         {title} is a very {expandedAdjective?.adjective} monster.<br/>
-                        {title} is {expandedEmotion?.emotion} and loves {expandedMusic?.music}.<br/>
+                        {title} is {expandedEmotion?.emotion} and loves {expandedMusic?.genre}.<br/>
                         {title}'s favorite color is {expandedColor?.color}.
                     
                     </div>
+            <ViewProfileBtn/>
                 </div>
             </div>
-            <ViewProfileBtn/>
           
         </>
     );

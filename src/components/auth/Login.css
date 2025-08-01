@@ -1,9 +1,98 @@
-h1 {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-      border: 2px solid blueviolet;
-}
-    
+@keyframes lct {
+  0% {
+    color: #ff3131;
+  }
 
+  50% {
+    color: white;
+  }
+
+  100% {
+    color: #ff3131;
+  }
+}
+
+
+
+h2 {
+  font-family: "Bitcount Prop Double", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5rem;
+  color: #ff3131;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 230px;
+  animation: lct 2s infinite;
+  padding: 40px;
+
+}
+
+.form-login {
+  border: 2px solid transparent;
+  margin: 0% auto;
+
+}
+
+.form-control {
+  width: 75%;
+  padding: 10px;
+  margin: 25px 0;
+  border: 1px solid #ff3131;
+  border-radius: 4px;
+  font-family: "Bitcount Prop Double", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  color: #ff3131;
+  text-align: center;
+}
+
+.login-btn {
+  border: 1px solid #ff3131;
+  border-radius: 4px;
+  font-family: "Bitcount Prop Double", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  color: #ff3131;
+  text-align: center;
+}
+
+.btn-info {
+  background-color: #ff3131;
+  color: white;
+
+}
+
+.btn-link {
+  font-family: "Bitcount Prop Double", system-ui;
+
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  color: #ff3131;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.register-link {
+margin-top: 30px;
+font-size: 2rem;
+}
+
+.btn-link:hover {
+  color: #ff3131;
+  text-decoration: underline;
+}
+
+.lemon {
+  border: 2px solid transparent
+}
+
+.lemon2 {
+  border: 2px solid transparent
+}

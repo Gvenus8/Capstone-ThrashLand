@@ -1,0 +1,69 @@
+@keyframes lc2 {
+    0% {
+        color: #ff3131;
+    }
+
+    20% {
+        color: white;
+    }
+
+    40% {
+        color: #f6ff00;
+    }
+
+    60% {
+        color: #31ff53;
+    }
+
+    80% {
+        color: #6b31ff;
+    }
+
+    100% {
+        color: #ff3131;
+    }
+}
+
+.title-group {
+    border: 5px solid #ff3131;
+    border-radius: 12px;
+    height: 500px;
+
+}
+
+h3 {
+    font-weight: bold;
+    color: #ff3131;
+    text-align: center;
+    margin: 0%, auto;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3rem;
+    animation: lc2 8s infinite;
+    border-bottom: #ff3131 15px solid;
+    border-top: #ff3131 15px solid;
+}
+
+.form-text {
+    border: 12px inset #ff3131;
+    border-radius: 8px;
+    padding: 10px;
+    width: 90%;
+    height: 150px;
+    box-sizing: border-box;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3rem;
+    background-color: transparent;
+}
+
+.title-label {
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}

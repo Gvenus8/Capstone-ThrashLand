@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { getMusicChoice } from "../../fetches/ChoiceFetches"
+import "./FavMusicChoice.css"
 
 export const FavMusicChoice = ({onMusicChange}) => {
     const [allMusicChoice, setAllMusicChoice] = useState([]);
@@ -14,10 +15,10 @@ export const FavMusicChoice = ({onMusicChange}) => {
     return (
     <>
         <div className="favmusic">
-            <h2>What Kind of Music Does Your Monster like?</h2>
+            <div className="music-choice-title">HOW DO YOU LIKE YOUR METAL?</div>
             <div>
                 {allMusicChoice.map((music) => (
-                    <label key={music.id}>
+                    <label key={music.id} className="music-choice-label">
                         <input
                             className="music-choice-input"
                             type="radio"

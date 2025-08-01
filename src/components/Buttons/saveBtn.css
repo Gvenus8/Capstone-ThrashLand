@@ -1,0 +1,20 @@
+.save-btn {
+    background-color: #ff3131;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1.5rem;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 88%;
+    margin-top: 7%;
+}
+
+.save-btn:hover {
+    background-color: #ff6060;
+}

@@ -1,0 +1,38 @@
+.favcolor {
+    border: 5px inset #f6ff00;
+    border-radius: 12px;
+    
+}
+.color-choice-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    text-align: center;
+    color: #f6ff00;
+    
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}   
+
+.color-choice-input{
+   
+    background-color: transparent;
+    border: 5px solid blueviolet;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    
+    color: var(#ff3131);
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.color-choice-label {
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;    
+}

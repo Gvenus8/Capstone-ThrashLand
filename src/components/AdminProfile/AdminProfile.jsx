@@ -41,7 +41,9 @@ const [allUserArt, setAllUserArt] = useState([]);
 
     return (
         <div className="admin-profile-container"> 
-           <h2>Admin</h2>
+           <div className="admin-header">
+              Admin
+           </div>
            <div className="admin-actions">
                 <h3>All Users</h3>
                 <h4>User Id</h4>

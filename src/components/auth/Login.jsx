@@ -34,9 +34,9 @@ export const Login = () => {
     <main className="container-login">
       <section>
         <form className="form-login" onSubmit={handleLogin}>
-          <h1>ThrashLand</h1>
-          <h2>Please sign in</h2>
-          <fieldset>
+          <h1></h1>
+          <h2>PLEASE SIGN IN</h2>
+          <fieldset className="lemon">
             <div className="form-group">
               <input
                 type="email"
@@ -49,7 +49,7 @@ export const Login = () => {
               />
             </div>
           </fieldset>
-          <fieldset>
+          <fieldset className="lemon2">
             <div className="form-group">
               <button className="login-btn btn-info" type="submit">
                 Sign in
@@ -57,9 +57,10 @@ export const Login = () => {
             </div>
           </fieldset>
         </form>
-      </section>
-      <section>
-        <Link to="/register">Not a member yet?</Link>
+      
+      <div className="register-link">
+        <Link to="/register" className="btn-link">READY TO THRASH?</Link>
+      </div>
       </section>
     </main>
   )

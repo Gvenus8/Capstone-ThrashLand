@@ -14,17 +14,18 @@ export const AdjectiveChoice = ({onAdjectiveChange}) => {
     return (
     <>
         <div className="adjectives">
-            <h2>How would you describe your Monster? </h2>
+            <div className="adjective-choice-title">HOW WOULD YOU DESCRIBE YOUR THRASHER? </div>
             <div>
                 {allAdjectiveChoices.map((adjective) => (
-                    <label key={adjective.id}>
+                    <label key={adjective.id} className="adjective-choice-label">
                         <input
                             className="adjective-choice-input"
                             type="radio"
                             value={adjective.id}
                             name="adjective-choice"
                             onChange = {(event) => onAdjectiveChange(parseInt(event.target.value))}
-                        />   
+                        />  
+                         
                         {adjective.adjective}
                     </label>
                 ))}

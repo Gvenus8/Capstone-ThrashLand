@@ -1,23 +1,135 @@
+@keyframes homeAnimation {
+    0% {
+        background-color: transparent;
+        
+    }
+
+    1% {
+
+        background-image: url('/images/liveText.png');
+      
+     
+    }
+
+    10% {
+        background-image: url('/images/fastText.png');
+       
+    }  
 
 
-h5 {
-    text-align: center;
-    margin-top: 250px;
-    font-size: 100px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    border: 2px solid blueviolet;
+    20% {
+
+       background-image: url('/images/thrashText.png');
+
+    }
+
+
+    30% {
+        background-image: url('/images/hardText.png');
+       
+    }
+
+
+    50% {
+        background-color: transparent;
+        background-image: url('/images/welcomeText.png');
+        
+    }
+
+
+
+    100% {
+        background-color: transparent;
+        background-image: url('/images/welcomeText.png');
+        
+    }
+    
 }
+
+.home-container {
+
+    width: 100%;
+    height: 1000px;
+    animation-name: homeAnimation;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    
+    margin-right: auto;
+    margin-left: auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border-color: transparent;
+    border: transparent 2px solid;
+    margin-bottom: 20px;
+    
+}
+
 
 
 .login-buttons {
     display: flex;
     justify-content: center;
-   margin: auto;
-    padding: 20px;
-    gap: 20px;
-    font-size: 1.2rem;
+    align-items: baseline;
+    gap: 10px;
+    margin-top: 750px;
+   
+    border: none;
 }
 
-.login-buttons .btn {
-    margin: 0 1rem;
+.btn-primary {
+    border: 1px solid #ff3131;
+    border-radius: 4px;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    color: #ff3131;
+    text-align: center;
+}
+
+.btn-secondary {
+    border: 1px solid #ff3131;
+    border-radius: 4px;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    color: #ff3131;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+.btn-info {
+    background-color: #ff3131;
+    color: white;
+
+}
+
+.btn-link {
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5rem;
+    color: #ff3131;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.btn-link:hover {
+    color: #ff3131;
+    text-decoration: underline;
 }

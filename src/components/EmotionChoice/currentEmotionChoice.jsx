@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { getEmotionChoice } from "../../fetches/ChoiceFetches"
+import "./currentEmotionChoice.css"
 
 export const EmotionChoice = ({onEmotionChange}) => {
     const [allEmotionChoices, setAllEmotionChoices] = useState([]);
@@ -14,10 +15,10 @@ export const EmotionChoice = ({onEmotionChange}) => {
     return (
     <>
         <div className="current-emotion">
-            <h2>How are you Feeling?</h2>
+            <div className="emotion-choice-title">WEAPON OF CHOICE?</div>
             <div>
                 {allEmotionChoices.map((emotion) => (
-                    <label key={emotion.id}>
+                    <label key={emotion.id} className="emotion-choice-label">
                         <input
                             className="emotion-choice-input"
                             type="radio"

@@ -1,27 +1,526 @@
-.user-profile-container {
-    padding: 10%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+@keyframes dtrain {
+    0% {
+        color: #ff3131;
+    }
 
-    margin: 0 auto;
+    20% {
+        color: white;
+    }
+
+    40% {
+        color: #f6ff00;
+    }
+
+    60% {
+        color: #31ff53;
+    }
+
+    80% {
+        color: #6b31ff;
+    }
+
+    100% {
+        color: #ff3131;
+    }
+}
+
+.user-profile-container {
+    border: 5px solid #ff3131;
+    border-radius: 20px;
+    background-image: url('/images/dtrain.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80%;
+    height: 80%;
+    margin: 0% auto;
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    width: 70%;
+    height: 400px;
+    margin-left: 15%;
+    margin-bottom: 20%;
+    margin-top: 5%;
+}
+
+.profile-header {
+    font-size: 100px;
+    font-weight: bold;
+    color: #ff3131;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    animation: lct 8s infinite;
+    border: 5px solid transparent;
+    border-radius: 20px;
+    width: 35%;
+    height: 100px;
+    margin-left: 33%;
+    padding: 1%;
+
 }
 
 .user-details-container {
-    margin-bottom: 20px;
-    border: 1px solid #870404;
+    width: 33%;
+    justify-content: space-evenly;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    border: 5px solid #6431ff;
+    border-radius: 20px;
 }
-.name-container {
-    display: table-row;
+
+.user-details {
+    width: 33%;
+    height: 500px;
+    border: 10px solid #ff3131;
+    border-radius: 10px;
+    background-color: black;
+    margin-top: 120px;
+
+}
+
+.right-side {
+    border: 10px solid #ff3131;
+    border-radius: 10px;
+    width: 33%;
+    height: 500px;
+    background-color: black;
+    margin-top: 120px;
+
+}
+
+.name {
+    width: 100%;
+    height: 50%;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    border-radius: 20px;
+    font-size: 25px;
+    text-align: left;
+}
+
+.name-label {
+    font-size: 40px;
+    border-bottom: 5px solid #ff3131;
+    background-color: #ff3131;
+    width: 100%;
+    text-align: right;
+    color: white;
+    text-align: center;
+
+}
+
+.name-section {
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start;
     align-items: center;
+    margin-top: 20px;
+
 }
 
-.name-section,
-.email-section {
+.name-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 25px;
     margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow-y: scroll;
+    height: 50%;
+}
+
+.btn-name {
+    background-color: #ff3131;
+    height: 35px;
+    width: 100%;
+    font-size: 23px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 1%;
+}
+
+.email-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.email {
+    width: 100%;
+    height: 50%;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    border-radius: 20px;
+    font-size: 20px;
+    text-align: left;
+}
+
+.email-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 15px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.email-label {
+    font-size: 45px;
+    background-color: #ff3131;
+    width: 100%;
+    text-align: center;
 
 }
 
-button {
+.btn-email {
+    background-color: #ff3131;
+    height: 40px;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 60px;
+    padding: 1%;
+}
+
+.bio-container {
+    width: 100%;
+    border-radius: 20px;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+
+    display: flex;
+    flex-direction: column;
+    /* ✅ CHANGE TO COLUMN */
+    justify-content: flex-start;
+    /* ✅ ALIGN TO TOP */
+    align-items: stretch;
+    /* ✅ STRETCH ITEMS TO FULL WIDTH */
+
+
+
+}
+
+.bio {
+    width: 100%;
+    height: 50%;
+    border-radius: 20px;
+    font-size: 45px;
+    text-align: left;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.bio-header {
+    font-size: 45px;
+    border-bottom: 5px solid #ff3131;
+    background-color: #ff3131;
+    ;
+    width: 100%;
+    text-align: center;
+    color: white;
+
+}
+
+.bio-bottom {
+    display: flex;
+    width: 90%;
+    height: 80%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    /* ✅ TAKE REMAINING SPACE */
+    padding: 0px;
+    /* ✅ ADD PADDING */
+    overflow: hidden;
+    margin-top: 11%;
+    gap: 10px;
+
+
+
+
+}
+
+.bio-text {
+    padding: 10px;
+    font-size: 19px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    flex: 1;
+    overflow-y: scroll;
+    width: 100px;
+    height: 40px;
+}
+
+.bio-btn {
+    background-color: #ff3131;
+    height: 30px;
+    width: 100%;
+    font-size: 13px;
+    text-align: center;
+}
+
+
+
+.btn-post {
+    background-color: #ff3131;
+    height: 50px;
+    width: 80%;
+    font-size: 25px;
+    text-align: center;
+    padding: 1%;
+}
+
+
+.community-post {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    font-size: 15px;
+    margin-top: 30%;
+}
+
+.score-title {
+    font-size: 45px;
+    background-color: #ff3131;
+    width: 100%;
+    text-align: center;
+}
+
+.score-value {
+    font-size: 65px;
+    font-weight: bold;
+    color: white;
+    height: 35px;
+    animation: dtrain 8s infinite;
+    text-align: center;
+}
+
+.score-display {
+    width: 100%;
+    height: 40%;
+    border-radius: 20px;
+    font-size: 45px;
+    text-align: left;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+.user-art-section {
+    border: 10px solid #ff3131;
+    border-radius: 20px;
+    width: 33%;
+    height: 500px;
+    background-color: black;
+    margin-top: 120px;
+}
+
+.art-description {
+    width: 95%;
+    height: 425px;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    border-radius: 20px;
+    font-size: 25px;
+    text-align: left;
+}
+
+.monster-image2 {
+    border-bottom: 5px solid #ff3131;
+    margin-bottom: 0px;
+}
+
+.art-header {
+    font-size: 40px;
+    border-bottom: 5px solid #ff3131;
+    background-color: #ff3131;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.art-item {
+    width: 100%;
+    height: 350px;
+
+
+
+}
+
+
+
+
+.art-action-delete {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 5px;
     margin-left: 10px;
+}
+
+.btn-prod {
+    background-color: #ff3131;
+    height: 30px;
+    width: 90%;
+
+    text-align: center;
+    padding: 1%;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: 25px;
+}
+
+.btn-proview {
+    background-color: #ff3131;
+    height: 30px;
+    width: 90%;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 1%;
+    padding: 1%;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+
+
+}
+
+.art-title {
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: 30px;
+    color: white;
+    margin-top: 10px;
+    width: 90%;
+    height: 40px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    flex: 1;
+    overflow-y: scroll;
+}
+
+.btn4 {
+    background-color: #ff3131;
+    height: 30px;
+    padding: 1%;
+    width: 80%;
+    font-size: 25px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.editname {
+    margin-left: 10px;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 300;
+}
+
+.bio-textarea {
+    margin-left: 10px;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    width: 80%;
+    margin-top: 10px;
+    height: 80px;
+
+}
+
+.bio-text {
+    margin-bottom: 20px;
+
+
+}
+
+.bio-buttons {
+    display: flex;
+
+    height: 10px;
+    align-items: flex-end;
+    margin-top: 40px;
+    padding: 1%;
+}
+
+.bio-section {
+
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 2750px;
+
+
+}
+
+.bio-bottom {
+    margin-top: 30px;
+    font-size: 25px;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    color: white;
+}
+
+.btn5 {
+    background-color: #ff3131;
+    height: 40px;
+    font-size: 25px;
+    padding: 1%;
+    width: 60%;
+
+
+}
+
+.noArt {
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: 30px;
+    color: white;
+
 }
