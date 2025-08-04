@@ -50,9 +50,9 @@ export const ViewArt = () => {
                     <img className="monster-image" src={monster.url} alt="user-game-piece"/>
                     <div className = "monster-bio">
                         
-                        {title} is a very {expandedAdjective?.adjective} monster.<br/>
-                        {title} is {expandedEmotion?.emotion} and loves {expandedMusic?.genre}.<br/>
-                        {title}'s favorite color is {expandedColor?.color}.
+                        {title} is a very {expandedAdjective?.adjective} thrasher.<br/>
+                        {title} uses {expandedEmotion?.emotion} and {expandedMusic?.genre} metal,<br/>
+                        to bring him closer to their idol {expandedColor?.color}.
                     
                     </div>
             <ViewProfileBtn/>
