@@ -1,47 +1,51 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Login.css"
-import { getUserByEmail, createUser } from "../../fetches/UserFetches"
-
-
+import { supabase } from "../../supabaseClient"
 
 export const Register = () => {
   const [customer, setCustomer] = useState({
     email: "",
     name: "",
+    password: "",
     total_score: 0,
     bio: ""  
   })
   let navigate = useNavigate()
 
-  const registerNewUser = () => {
-    createUser(customer).then((createdUser) => {
-     if (createdUser.id) {
-        localStorage.setItem(
-          "thrashland_user",
-          JSON.stringify({
-            id: createdUser.id,
-            name: createdUser.name,
-            email: createdUser.email,
-            total_score: createdUser.total_score || 0,
-
-          })
-        )
-
-        navigate("/welcome")
-      }
-    })
-  }
-
-  const handleRegister = (event) => {
+  const handleRegister = async (event) => {
     event.preventDefault()
-    getUserByEmail(customer.email).then((response) => {
-      if (response.length > 0) {
-        window.alert("Account with that email address already exists")
-      } else {
-        registerNewUser()
-      }
+    
+    const { data: authData, error: authError } = await supabase.auth.signUp({
+      email: customer.email,
+      password: customer.password,
     })
+
+    if (authError) {
+      window.alert("Error creating account: " + authError.message)
+      return
+    }
+
+    // Step 2: Add user info to your users table
+    const { data: userData, error: userError } = await supabase
+      .from('users')
+      .insert([{
+        id: authData.user.id, // Use the auth user's ID
+        name: customer.name,
+        email: customer.email,
+        total_score: 0,
+        bio: ""
+      }])
+      .select()
+
+    if (userError) {
+      window.alert("Error saving user data: " + userError.message)
+      return
+    }
+
+    // Success! Navigate to welcome page
+    window.alert("Account created successfully!")
+    navigate("/welcome")
   }
 
   const updateCustomer = (event) => {
@@ -80,7 +84,19 @@ export const Register = () => {
             />
           </div>
         </fieldset>
-       
+        <fieldset className="lemon">
+          <div className="form-group">
+            <input
+              onChange={updateCustomer}
+              type="password"
+              id="password"
+              className="form-control"
+              placeholder="Password (min 6 characters)"
+              required
+              minLength={6}
+            />
+          </div>
+        </fieldset>
         <fieldset className="lemon">
           <div className="form-group">
             <button className="login-btn btn-info" type="submit">

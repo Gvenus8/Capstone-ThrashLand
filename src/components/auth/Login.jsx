@@ -2,32 +2,37 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import "./Login.css"
-import { getUserByEmail } from "../../fetches/UserFetches"
+import { supabase } from "../../supabaseClient"
 
 export const Login = () => {
-  const [email, set] = useState("alice@example.com")
+  const [credentials, setCredentials] = useState({
+    email: "",
+    password: ""
+  })
   const navigate = useNavigate()
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault()
 
-    getUserByEmail(email).then((foundUsers) => {
-      if (foundUsers.length === 1) {
-        const user = foundUsers[0]
-        localStorage.setItem(
-          "thrashland_user",
-          JSON.stringify({
-            id: user.id,
-           name: user.name,
-          email: user.email,
-          })
-        )
 
-        navigate("/welcome")
-      } else {
-        window.alert("Invalid login")
-      }
+    const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
+      email: credentials.email,
+      password: credentials.password,
     })
+
+    if (authError) {
+      window.alert("Invalid login: " + authError.message)
+      return
+    }
+
+   
+    navigate("/welcome")
+  }
+
+  const updateCredentials = (evt) => {
+    const copy = { ...credentials }
+    copy[evt.target.name] = evt.target.value
+    setCredentials(copy)
   }
 
   return (
@@ -40,12 +45,26 @@ export const Login = () => {
             <div className="form-group">
               <input
                 type="email"
-                value={email}
-                onChange={(evt) => set(evt.target.value)}
+                name="email"
+                value={credentials.email}
+                onChange={updateCredentials}
                 className="form-control"
                 placeholder="Email address"
                 required
                 autoFocus
+              />
+            </div>
+          </fieldset>
+          <fieldset className="lemon">
+            <div className="form-group">
+              <input
+                type="password"
+                name="password"
+                value={credentials.password}
+                onChange={updateCredentials}
+                className="form-control"
+                placeholder="Password"
+                required
               />
             </div>
           </fieldset>
@@ -58,9 +77,9 @@ export const Login = () => {
           </fieldset>
         </form>
       
-      <div className="register-link">
-        <Link to="/register" className="btn-link">READY TO THRASH?</Link>
-      </div>
+        <div className="register-link">
+          <Link to="/register" className="btn-link">READY TO THRASH?</Link>
+        </div>
       </section>
     </main>
   )
