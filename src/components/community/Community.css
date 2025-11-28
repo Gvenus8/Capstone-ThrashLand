@@ -1,5 +1,5 @@
 .community-container {
-   width: 80%;
+   width: 1200px;
    height: 700px;
    border: 5px solid #ff3131;
    border-radius: 20px;
@@ -7,15 +7,16 @@
    overflow-y: scroll;
 }
 .community-header {
-    width: 30%;
-    height: 180px;
-    border: 5px solid #ff3131;
-    border-radius: 20px;
-    margin: 30px auto;
-    background-image: url("../images/wel2.gif");
+    width: 80%;
+    height: 350px;
+    
+   
+    margin-left: 10%;
+    background-image: url("../images/TES.png");
     background-repeat: no-repeat;
-    background-size: contain;
-    margin-top: 50px;
+    background-size: 1000px 450px;
+    ;
+    margin-top: -20px;
 }
 .h1 {
     text-align: center;
@@ -23,12 +24,13 @@
     font-family: "Bitcount Prop Double", system-ui;
     font-size: 110px;
     border: 15px solid #ff3131;
-    border-radius: 120px;
+    border-radius: 20px;
     width: 80%;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     margin-left: 10%;
+    margin-top: 10px;
     animation:lct 1s infinite;
 }
 

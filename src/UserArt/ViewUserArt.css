@@ -35,16 +35,12 @@
 }
 
 .view-art-container {
-    display: flex;
     border: 5px solid #ff3131;
     border-radius: 20px;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start; 
-    height: 700px;
+    height: 850px;
     background-color: rgb(46, 44, 44);
     animation: lc4 8s infinite;
-    width: 80%;
+    width: 1200px;
     margin: 0% auto;
     padding: 20px; 
 }
@@ -54,7 +50,9 @@
     width: 80%;
     height: 650px;
     background-color: black;
-    margin: 0% auto;
+    margin-top: 80px;
+    margin-left: 110px;
+    
 }
 .view-art-title {
     font-size: 50px;

@@ -163,7 +163,31 @@ export const UserProfile = () => {
                             )}
                         </div>
                     </div>
-                    <div className="email">
+                    <div className="score-display" >
+                        <div className="score-title">Score:</div>
+                        <div className = "score-container">
+
+                        <div className="score-value">
+                            {user.totalScore || 0}
+                        </div>
+
+                        <div className="community-post">
+
+                            <button onClick={handleComPost} className="btn-post"
+                            >
+                                Scoreboard
+                            </button>
+
+                        </div>
+                    </div>
+
+
+                    </div>
+                </div>
+
+
+                <div className="user-art-section">
+                      <div className="email">
                         <div className="email-label">Email:</div>
                         <div className="email-section">
                             {isEditingEmail ? (
@@ -190,10 +214,43 @@ export const UserProfile = () => {
                             )}
                         </div>
                     </div>
+                     <div className="bio">
+
+                        <div className="bio-container">
+                            <div className="bio-header">Bio:</div>
+                            <div className="bio-section">
+                                {isEditingBio ? (
+                                    <div>
+                                        <textarea
+                                            className="bio-textarea"
+                                            value={bio}
+                                            onChange={(e) => setBio(e.target.value)}
+                                            placeholder="Tell us about yourself..."
+                                            rows={4}
+                                            cols={50}
+                                        />
+                                        <div className="bio-buttons">
+                                            <button onClick={handleSaveBio} className="btn5">Save </button>
+                                            <button onClick={() => setIsEditingBio(false)} className="btn5">Cancel</button>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className="bio-bottom">
+                                        <div className="bio-text">{bio || "No bio added yet."}</div>
+                                        <button onClick={() => setIsEditingBio(true)} className="bio-btn">
+                                            {bio ? "Edit Bio" : "Add Bio"}
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+                  
+                   
                 </div>
-
-
-                <div className="user-art-section">
+                <div className="right-side">
                     <div className="art-header">BEAST:</div>
                     <div className="art-description">
                         {userArt.length > 0 ? (
@@ -204,8 +261,8 @@ export const UserProfile = () => {
                                         alt={userArt[0].title}
                                         className="monster-image2"
                                         style={{
-                                            width: '200px',
-                                            height: '275px',
+                                            width: '250px',
+                                            height: '250px',
                                             objectFit: 'fill',
                                         }}
                                     />
@@ -237,56 +294,7 @@ export const UserProfile = () => {
 
                         )}
                     </div>
-                </div>
-                <div className="right-side">
-                    <div className="bio">
-
-                        <div className="bio-container">
-                            <div className="bio-header">Bio:</div>
-                            <div className="bio-section">
-                                {isEditingBio ? (
-                                    <div>
-                                        <textarea
-                                            className="bio-textarea"
-                                            value={bio}
-                                            onChange={(e) => setBio(e.target.value)}
-                                            placeholder="Tell us about yourself..."
-                                            rows={4}
-                                            cols={50}
-                                        />
-                                        <div className="bio-buttons">
-                                            <button onClick={handleSaveBio} className="btn5">Save </button>
-                                            <button onClick={() => setIsEditingBio(false)} className="btn5">Cancel</button>
-                                        </div>
-                                    </div>
-                                ) : (
-                                    <div className="bio-bottom">
-                                        <div className="bio-text">{bio || "No bio added yet."}</div>
-                                        <button onClick={() => setIsEditingBio(true)} className="bio-btn">
-                                            {bio ? "Edit Bio" : "Add Bio"}
-                                        </button>
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="score-display" >
-                        <div className="score-title">Score:</div>
-                        <div className="score-value">
-                            {user.totalScore || 0}
-                        </div>
-
-                        <div className="community-post">
-
-                            <button onClick={handleComPost} className="btn-post"
-                            >
-                                Scoreboard
-                            </button>
-
-                        </div>
-
-
-                    </div>
+                   
                 </div>
 
 

@@ -30,7 +30,7 @@
     background-image: url('/images/dtrain.png');
     background-repeat: no-repeat;
     background-size: cover;
-    width: 80%;
+    width: 1200px;
     height: 80%;
     margin: 0% auto;
 }
@@ -41,30 +41,31 @@
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-    width: 70%;
-    height: 400px;
-    margin-left: 15%;
+    width: 95%;
+    height: 500px;
+    margin-left: 2%;
     margin-bottom: 20%;
-    margin-top: 5%;
+    margin-top: 1%;
 }
 
 .profile-header {
-    font-size: 100px;
+    font-size: 80px;
     font-weight: bold;
     color: #ff3131;
     text-align: center;
-    margin-bottom: 10px;
+
     font-family: "Bitcount Prop Double", system-ui;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     animation: lct 8s infinite;
-    border: 5px solid transparent;
+    border: 5px solid #ff3131;
     border-radius: 20px;
     width: 35%;
-    height: 100px;
-    margin-left: 33%;
-    padding: 1%;
+    height: 110px;
+    margin-left: 32%;
+    margin-top: 20px;
+   
 
 }
 
@@ -80,24 +81,15 @@
 }
 
 .user-details {
-    width: 33%;
-    height: 500px;
+    width: 25%;
+    height: 650px;
     border: 10px solid #ff3131;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: black;
-    margin-top: 120px;
+    margin-top: 200px;
 
 }
 
-.right-side {
-    border: 10px solid #ff3131;
-    border-radius: 10px;
-    width: 33%;
-    height: 500px;
-    background-color: black;
-    margin-top: 120px;
-
-}
 
 .name {
     width: 100%;
@@ -107,7 +99,7 @@
     font-weight: 400;
     font-style: normal;
     border-radius: 20px;
-    font-size: 25px;
+    font-size: 35px;
     text-align: left;
 }
 
@@ -119,18 +111,21 @@
     text-align: right;
     color: white;
     text-align: center;
-
+    
 }
 
 .name-section {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
+    width: 90%;
+    height: 70%;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 20px;
-
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 5px solid #ff3131;
+    
 }
 
 .name-bottom {
@@ -139,12 +134,12 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    font-size: 25px;
+    font-size: 45px;
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
     overflow-y: scroll;
-    height: 50%;
+    height: 60%;
 }
 
 .btn-name {
@@ -155,6 +150,62 @@
     text-align: center;
     margin-top: 20px;
     padding: 1%;
+}
+
+.score-container{
+    border: 5px solid #ff3131;
+    width: 87% ;
+    height: 87%;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.score-title {
+    font-size: 45px;
+    background-color: #ff3131;
+    width: 100%;
+    text-align: center;
+}
+
+.score-value {
+    font-size: 75px;
+    font-weight: bold;
+    color: white;
+    height: 35px;
+    animation: dtrain 8s infinite;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 7px;
+}
+
+.score-display {
+    width: 100%;
+    height: 40%;
+    border-radius: 20px;
+    font-size: 45px;
+    text-align: left;
+    font-family: "Bitcount Prop Double", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal; 
+}
+
+.community-post {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    font-size: 15px;
+    margin-top: 30%;
+}
+.right-side {
+    border: 10px solid #ff3131;
+    border-radius: 20px;
+    width: 30%;
+    height: 650px;
+    background-color: black;
+    margin-top: 200px;
+
 }
 
 .email-section {
@@ -169,7 +220,7 @@
 
 .email {
     width: 100%;
-    height: 50%;
+    height: 35%;
     font-family: "Bitcount Prop Double", system-ui;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -185,8 +236,8 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    font-size: 15px;
-    margin-top: 20px;
+    font-size: 35px;
+    margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -205,34 +256,27 @@
     width: 100%;
     font-size: 25px;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 6px;
     padding: 1%;
 }
 
 .bio-container {
     width: 100%;
     border-radius: 20px;
-    height: 50%;
+    height: 80%;
     display: flex;
     flex-direction: row;
-
     display: flex;
     flex-direction: column;
-    /* ✅ CHANGE TO COLUMN */
     justify-content: flex-start;
-    /* ✅ ALIGN TO TOP */
     align-items: stretch;
-    /* ✅ STRETCH ITEMS TO FULL WIDTH */
-
-
-
 }
 
 .bio {
     width: 100%;
     height: 50%;
     border-radius: 20px;
-    font-size: 45px;
+    font-size: 55px;
     text-align: left;
     font-family: "Bitcount Prop Double", system-ui;
     font-optical-sizing: auto;
@@ -260,9 +304,7 @@
     justify-content: space-between;
     align-items: center;
     flex: 1;
-    /* ✅ TAKE REMAINING SPACE */
     padding: 0px;
-    /* ✅ ADD PADDING */
     overflow: hidden;
     margin-top: 11%;
     gap: 10px;
@@ -274,18 +316,18 @@
 
 .bio-text {
     padding: 10px;
-    font-size: 19px;
+    font-size: 29px;
     word-wrap: break-word;
     overflow-wrap: break-word;
     flex: 1;
     overflow-y: scroll;
     width: 100px;
-    height: 40px;
+    height: 200px;
 }
 
 .bio-btn {
     background-color: #ff3131;
-    height: 30px;
+    height: 50px;
     width: 100%;
     font-size: 13px;
     text-align: center;
@@ -303,51 +345,13 @@
 }
 
 
-.community-post {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    align-items: center;
-    font-size: 15px;
-    margin-top: 30%;
-}
-
-.score-title {
-    font-size: 45px;
-    background-color: #ff3131;
-    width: 100%;
-    text-align: center;
-}
-
-.score-value {
-    font-size: 65px;
-    font-weight: bold;
-    color: white;
-    height: 35px;
-    animation: dtrain 8s infinite;
-    text-align: center;
-}
-
-.score-display {
-    width: 100%;
-    height: 40%;
-    border-radius: 20px;
-    font-size: 45px;
-    text-align: left;
-    font-family: "Bitcount Prop Double", system-ui;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-
-}
-
 .user-art-section {
     border: 10px solid #ff3131;
     border-radius: 20px;
-    width: 33%;
-    height: 500px;
+    width: 45%;
+    height: 650px;
     background-color: black;
-    margin-top: 120px;
+    margin-top: 200px;
 }
 
 .art-description {
@@ -363,8 +367,13 @@
 }
 
 .monster-image2 {
-    border-bottom: 5px solid #ff3131;
+    border: 5px solid #ff3131;
+    background-color: white;
     margin-bottom: 0px;
+    margin-left: 25px;
+    margin-top: 30px;
+    border-radius: 15px;
+   
 }
 
 .art-header {
@@ -396,13 +405,13 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
-    margin-top: 5px;
+    margin-top: 55px;
     margin-left: 10px;
 }
 
 .btn-prod {
     background-color: #ff3131;
-    height: 30px;
+    height: 50px;
     width: 90%;
 
     text-align: center;
@@ -415,7 +424,7 @@
 
 .btn-proview {
     background-color: #ff3131;
-    height: 30px;
+    height: 50px;
     width: 90%;
     font-size: 25px;
     text-align: center;
@@ -432,9 +441,10 @@
     font-family: "Bitcount Prop Double", system-ui;
     font-optical-sizing: auto;
     font-weight: 300;
-    font-size: 30px;
+    font-size: 40px;
     color: white;
     margin-top: 10px;
+    margin-left: 20px;
     width: 90%;
     height: 40px;
     word-wrap: break-word;
@@ -447,17 +457,21 @@
     background-color: #ff3131;
     height: 30px;
     padding: 1%;
-    width: 80%;
+    width: 88%;
     font-size: 25px;
-    margin-left: 20px;
-    margin-top: 20px;
+    margin-left: 15px;
+    margin-top: 10px;
 }
 
 .editname {
-    margin-left: 10px;
+   
     font-family: "Bitcount Prop Double", system-ui;
+    font-size: 30px;
     font-optical-sizing: auto;
     font-weight: 300;
+    width: 92% ;
+    height: 60px;
+    margin-left: 5px;
 }
 
 .bio-textarea {
@@ -465,9 +479,10 @@
     font-family: "Bitcount Prop Double", system-ui;
     font-optical-sizing: auto;
     font-weight: 300;
-    width: 80%;
+    width: 95%;
     margin-top: 10px;
-    height: 80px;
+    height: 240px;
+    font-size: 25px;
 
 }
 

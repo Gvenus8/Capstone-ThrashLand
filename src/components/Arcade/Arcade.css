@@ -1,6 +1,6 @@
 .arcade {
-    width: 1000px; 
-    min-width: 1000px; 
+    width: 1200px; 
+    min-width: 1200px; 
     height: 700px;
     border: 5px solid #ff3131;
     border-radius: 20px;
@@ -12,7 +12,7 @@
 .arcade-header {
     position: absolute;
     top: 20px;
-    left: 160px;
+    left: 240px;
     color: white;
     font-size: 125px;
     font-weight: bold;
@@ -58,7 +58,7 @@
     margin: 151px auto;
     position: absolute; 
     left: 50%;
-    top: 25px; 
+    top: -20px; 
     transform: translateX(-50%); 
     flex-shrink: 0; 
 }

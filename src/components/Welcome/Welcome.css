@@ -1,16 +1,19 @@
 .welcome-background {
-    background-color: transparent;
-    background-image: url('../images/wel2.gif');
+    background-color: #ff3131;
+    background-image: url('../images/wel45.gif');
+    
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     
-    width: 90%;
-    height: 500px;
+    width: 1100px;
+    min-width: 1100px;
+    height: 660px;
     position: relative;
     border: 5px solid #ff3131;
     border-radius: 20px;
     margin: 0px auto;
+    flex-shrink: 0;
   
  
 }
