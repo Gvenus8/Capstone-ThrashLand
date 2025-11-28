@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getUserArtById } from "../../fetches/UserFetches";
 
-import "./AddTitleBtn.css"
+import "./addTitleBtn.css"
 
 export const AddTitleButton = ({selectedColor, selectedMusic, selectedEmotion, selectedAdjective, title }) => {
     const navigate = useNavigate();
