@@ -6,7 +6,7 @@ import { ViewArt } from "../../UserArt/ViewUserArt.jsx";
 import { UserProfile } from "../UserProfile/UserProfile.jsx";
 import { AddTitle } from "../Title/Title.jsx";
 import { Header } from "../header/header.jsx";
-import { Play } from "../play/Play.jsx";
+import { Play } from "../play/play.jsx";
 import { Footer } from "../footer/footer.jsx";
 import { Community } from "../Community/Community.jsx";  
 import { Arcade } from "../Arcade/Arcade.jsx";
