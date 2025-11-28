@@ -26,7 +26,7 @@
     margin-bottom: 20px;
     background-color:  rgb(242, 0, 0);
     font-weight: bold;
-    background-color: ;
+  
 
 }
 .admin-profile-container h4 {
@@ -43,7 +43,7 @@
 .admin-actions {
     margin-bottom: 20px;
 }
-li {
+.li {
     word-spacing: 10px;
     
     
