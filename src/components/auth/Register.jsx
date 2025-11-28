@@ -9,7 +9,7 @@ export const Register = () => {
   const [customer, setCustomer] = useState({
     email: "",
     name: "",
-    totalScore: 0,
+    total_Score: 0,
     bio: ""  
   })
   let navigate = useNavigate()
@@ -23,7 +23,7 @@ export const Register = () => {
             id: createdUser.id,
             name: createdUser.name,
             email: createdUser.email,
-            totalScore: createdUser.totalScore || 0,
+            total_score: createdUser.total_score || 0,
 
           })
         )

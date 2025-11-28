@@ -168,7 +168,7 @@ export const UserProfile = () => {
                         <div className = "score-container">
 
                         <div className="score-value">
-                            {user.totalScore || 0}
+                            {user.total_score || 0}
                         </div>
 
                         <div className="community-post">

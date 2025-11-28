@@ -27,7 +27,7 @@ return (
                     </tr>
                 </thead>
                 <tbody>
-                    {users.sort((a, b) => b.totalScore - a.totalScore)
+                    {users.sort((a, b) => b.total_score - a.total_score)
                        .map((user, index) => ( 
                        <tr key={user.id}>
                               <td className="td rank-cell">
@@ -38,7 +38,7 @@ return (
                                        #{index + 1}
                                    </td>
                             <td className="td">{user.name}</td>
-                            <td className="td">{user.totalScore}</td>
+                            <td className="td">{user.total_score}</td>
                         </tr>
                     ))}
                 </tbody>
