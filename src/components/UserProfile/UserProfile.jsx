@@ -1,7 +1,7 @@
 import { useState, useEffect, } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getUserArtById, getUserById } from "../../fetches/UserFetches.jsx";
-import { DeleteFetch } from "../../fetches/Deletefetch.jsx";
+import { DeleteFetch } from "../../fetches/DeleteFetch.jsx";
 import { updateUserBio, updateUserEmail } from "../../fetches/userProfileFetches.jsx";
 import { updateUserName } from "../../fetches/userProfileFetches.jsx";
 import "./UserProfile.css";
