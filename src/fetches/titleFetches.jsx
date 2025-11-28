@@ -1,4 +1,4 @@
-import { supabase } from './supabaseClient'
+import { supabase } from '../supabaseClient'
 
 export const updateUserArtWithTitle = async (userArtId, title) => {
     const { data, error } = await supabase
