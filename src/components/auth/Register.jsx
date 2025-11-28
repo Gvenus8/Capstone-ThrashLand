@@ -9,7 +9,7 @@ export const Register = () => {
   const [customer, setCustomer] = useState({
     email: "",
     name: "",
-    total_Score: 0,
+    total_score: 0,
     bio: ""  
   })
   let navigate = useNavigate()
