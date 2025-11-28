@@ -1,4 +1,4 @@
-import { Play } from "../play/Play.jsx";
+
 import { useNavigate } from "react-router-dom";
 import "./Arcade.css";
 
