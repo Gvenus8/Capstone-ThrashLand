@@ -1,21 +1,20 @@
-export const scorePut = (userId, score) => {
-   
+import { supabase } from './supabaseClient'
+
+
+export const scorePut = async (userId, score) => {
     if (typeof userId !== 'number') {
-        userId = parseInt(userId);
+        userId = parseInt(userId)
     }
     
-    return fetch(`http://localhost:8088/users/${userId}`)
-        .then(res => res.json())
-        .then(existingUser => {
-            return fetch(`http://localhost:8088/users/${userId}`, {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    ...existingUser,
-                    totalScore: parseInt(score)  
-                })
-            }).then(res => res.json());
-        });
-};
+    const { data, error } = await supabase
+        .from('users')
+        .update({ total_score: parseInt(score) })
+        .eq('id', userId)
+        .select()
+    
+    if (error) {
+        console.error('Error updating score:', error)
+        return null
+    }
+    return data
+}

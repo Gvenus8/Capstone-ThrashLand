@@ -1,16 +1,15 @@
-export const updateUserArtWithTitle = (userArtId, title) => {
-    return fetch(`http://localhost:8088/userArt/${userArtId}`)
-        .then(res => res.json())
-        .then(existingUserArt => {
-            return fetch(`http://localhost:8088/userArt/${userArtId}`, {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    ...existingUserArt,
-                    title: title
-                })
-            }).then(res => res.json());
-        });
-};
+import { supabase } from './supabaseClient'
+
+export const updateUserArtWithTitle = async (userArtId, title) => {
+    const { data, error } = await supabase
+        .from('user_art')
+        .update({ title: title })
+        .eq('id', userArtId)
+        .select()
+    
+    if (error) {
+        console.error('Error updating user art title:', error)
+        return null
+    }
+    return data
+}

@@ -1,15 +1,52 @@
-export const getMusicChoice = () => {
-    return fetch (`http://localhost:8088/favMusicChoices`).then(res => res.json());
+import { supabase } from './supabaseClient'
+
+export const getMusicChoice = async () => {
+    const { data, error } = await supabase
+        .from('fav_music_choices')
+        .select('*')
+    
+    if (error) {
+        console.error('Error fetching music choices:', error)
+        return []
+    }
+    return data
 }
 
-export const getColorChoice = () => {
-    return fetch (`http://localhost:8088/favColorChoices`).then(res => res.json());
+export const getColorChoice = async () => {
+    const { data, error } = await supabase
+        .from('fav_color_choices')
+        .select('*')
+    
+    if (error) {
+        console.error('Error fetching color choices:', error)
+        return []
+    }
+    return data
 }
 
-export const getEmotionChoice = () => {
-    return fetch (`http://localhost:8088/currentEmotionChoices`).then(res => res.json());
+export const getEmotionChoice = async () => {
+    const { data, error } = await supabase
+        .from('current_emotion_choices')
+        .select('*')
+    
+    if (error) {
+        console.error('Error fetching emotion choices:', error)
+        return []
+    }
+    return data
 }
 
-export const getAdjectiveChoice = () => {
-    return fetch (`http://localhost:8088/adjectiveChoices`).then(res => res.json());
+export const getAdjectiveChoice = async () => {
+    const { data, error } = await supabase
+        .from('adjective_choices')
+        .select('*')
+    
+    if (error) {
+        console.error('Error fetching adjective choices:', error)
+        return []
+    }
+    return data
 }
+
+
+

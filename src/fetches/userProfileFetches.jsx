@@ -1,49 +1,43 @@
-export const updateUserBio= (userId, bio) => {
-     return fetch(`http://localhost:8088/users/${userId}`)
-        .then(res => res.json())
-        .then(existingUser => {
-             return fetch(`http://localhost:8088/users/${userId}`, {
-                 method: "PUT",
-                 headers: {
-                     "Content-Type": "application/json"
-                 },
-                 body: JSON.stringify({
-                     ...existingUser,
-                     bio : bio
-        })
-     }) .then(res => res.json())
-    });
-};
-export const updateUserName = (userId, name) => {
-     return fetch(`http://localhost:8088/users/${userId}`)
-        .then(res => res.json())
-        .then(existingUser => {
-             return fetch(`http://localhost:8088/users/${userId}`, {
-                 method: "PUT",
-                 headers: {
-                     "Content-Type": "application/json"
-                 },
-                 body: JSON.stringify({
-                     ...existingUser,
-                     name: name
-        })
-     }) .then(res => res.json())
-    });
-};
+import { supabase } from './supabaseClient'
 
-export const updateUserEmail = (userId, email) => {
-        return fetch(`http://localhost:8088/users/${userId}`)
-        .then(res => res.json())
-        .then(existingUser => {
-    return fetch(`http://localhost:8088/users/${userId}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            ...existingUser,  
-            email: email 
-       })
-     }) .then(res => res.json())
-    });
-}; 
+export const updateUserBio = async (userId, bio) => {
+    const { data, error } = await supabase
+        .from('users')
+        .update({ bio: bio })
+        .eq('id', userId)
+        .select()
+    
+    if (error) {
+        console.error('Error updating user bio:', error)
+        return null
+    }
+    return data
+}
+
+export const updateUserName = async (userId, name) => {
+    const { data, error } = await supabase
+        .from('users')
+        .update({ name: name })
+        .eq('id', userId)
+        .select()
+    
+    if (error) {
+        console.error('Error updating user name:', error)
+        return null
+    }
+    return data
+}
+
+export const updateUserEmail = async (userId, email) => {
+    const { data, error } = await supabase
+        .from('users')
+        .update({ email: email })
+        .eq('id', userId)
+        .select()
+    
+    if (error) {
+        console.error('Error updating user email:', error)
+        return null
+    }
+    return data
+}

@@ -1,5 +1,14 @@
-export const getMonsterById = (userArt) => {
-  return fetch(`http://localhost:8088/monsters?id=${userArt}`).then((res) =>
-    res.json()
-  )
+import { supabase } from './supabaseClient'
+
+export const getMonsterById = async (monsterId) => {
+    const { data, error } = await supabase
+        .from('monsters')
+        .select('*')
+        .eq('id', monsterId)
+    
+    if (error) {
+        console.error('Error fetching monster:', error)
+        return []
+    }
+    return data
 }
