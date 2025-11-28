@@ -2,7 +2,7 @@ import { useState,useEffect } from "react";
 import { deleteUserArt, getAllUsers } from "../../fetches/AdminFetches.jsx";
 import { getAllUserArt } from "../../fetches/AdminFetches.jsx";
 import { deleteUsers } from "../../fetches/AdminFetches.jsx";
-import "./AdminProfile.css";
+import "../AdminProfile.css";
 
 export const AdminProfile = () => {
 const [allUsers, setAllUsers] = useState([]);
