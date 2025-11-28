@@ -8,7 +8,7 @@ import { AddTitle } from "../Title/Title.jsx";
 import { Header } from "../header/header.jsx";
 import { Play } from "../play/play.jsx";
 import { Footer } from "../footer/footer.jsx";
-import { Community } from "../community/community.jsx";  
+import { Community } from "../community/Community.jsx";  
 import { Arcade } from "../Arcade/Arcade.jsx";
 
 export const UserView = ({ currentUser }) => {
