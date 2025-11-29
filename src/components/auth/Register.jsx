@@ -26,7 +26,6 @@ export const Register = () => {
       return
     }
 
-    // Step 2: Add user info to your users table
     const { data: userData, error: userError } = await supabase
       .from('users')
       .insert([{
