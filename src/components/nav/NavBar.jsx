@@ -1,13 +1,14 @@
 import "./NavBar.css"
 import { Link, useNavigate } from 'react-router-dom'
+import { supabase } from "../../supabaseClient"
 
 export const NavBar = () => {
     const navigate = useNavigate();
 
-    const HandleLogout = () => {
-        localStorage.removeItem("thrashland_user");
-        navigate("/login");
-    }
+    const HandleLogout = async () => {
+           await supabase.auth.signOut();
+           navigate("/login");
+       }
 
     return (
         <ul className = "navBar">

@@ -2,7 +2,7 @@ import { ViewArt } from "../../UserArt/ViewUserArt"
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getUserArtById } from "../../fetches/UserFetches";
-
+import { supabase } from "../../supabaseClient";
 import "./addTitleBtn.css"
 
 export const AddTitleButton = ({selectedColor, selectedMusic, selectedEmotion, selectedAdjective, title }) => {
@@ -10,13 +10,14 @@ export const AddTitleButton = ({selectedColor, selectedMusic, selectedEmotion, s
     const [hasExistingArt, setHasExistingArt] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
-       useEffect(() => {
+    useEffect(() => {
         const checkExistingArt = async () => {
             try {
-                const userId = JSON.parse(localStorage.getItem("thrashland_user"))?.id;
+                // Get user from Supabase Auth
+                const { data: { user } } = await supabase.auth.getUser();
                 
-                if (userId) {
-                    const userArt = await getUserArtById(userId);
+                if (user) {
+                    const userArt = await getUserArtById(user.id);
                     
                     if (userArt && userArt.length > 0) {
                         setHasExistingArt(true);
@@ -36,7 +37,6 @@ export const AddTitleButton = ({selectedColor, selectedMusic, selectedEmotion, s
     
     const handleViewClick = () => {
         if (hasExistingArt) {
-            // ✅ SIMPLE ALERT - NO OPTIONS
             alert("Please delete your Thrasher first!");
             return;
         }
@@ -45,7 +45,8 @@ export const AddTitleButton = ({selectedColor, selectedMusic, selectedEmotion, s
             state: { selectedColor, selectedMusic, selectedEmotion, selectedAdjective, title }
         });
     }
-        if (isLoading) {
+    
+    if (isLoading) {
         return (
             <div className="conatainer-view-btn">
                 <button className="view-btn" disabled>
@@ -61,11 +62,9 @@ export const AddTitleButton = ({selectedColor, selectedMusic, selectedEmotion, s
                 className="view-btn"
                 type="order"
                 onClick={handleViewClick}
-                >
+            >
                 Next
             </button>
         </div>
     )
 }
-    
-

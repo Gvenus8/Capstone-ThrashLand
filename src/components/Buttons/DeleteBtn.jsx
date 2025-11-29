@@ -1,4 +1,4 @@
-import { DeleteFetch } from "../../fetches/Deletefetch";
+import { DeleteFetch } from "../../fetches/DeleteFetch.jsx";
 import { useNavigate } from "react-router-dom";
 import { getUserArtById } from "../../fetches/UserFetches.jsx";
 import { useState, useEffect } from "react";

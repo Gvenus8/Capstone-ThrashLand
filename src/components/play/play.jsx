@@ -4,6 +4,7 @@ import { getMonsterById } from '../../fetches/MonsterFetch.jsx';
 import { addToUserScore } from '../../fetches/scoreFetches.jsx';
 import './mario.css';
 import { scorePut } from '../../fetches/scorePost.jsx';
+import { supabase } from '../../supabaseClient.jsx';
 
 export const Play = () => {
     // Game container reference
@@ -91,23 +92,19 @@ export const Play = () => {
         };
         setPlayerPosition({ x: 350, y: 350 });
     };
-    const handleSaveScore = () => {
-        const userId = JSON.parse(localStorage.getItem("thrashland_user"))?.id;
+     const handleSaveScore = async () => {
+        const { data: { user } } = await supabase.auth.getUser();
+        const userId = user?.id;
 
         if (userId && typeof score === 'number') {
             scorePut(userId, score)
                 .then(result => {
                     console.log("Score saved successfully:", result);
-                    // Optional: Show success message
                 })
                 .catch(error => {
                     console.error("Failed to save score:", error);
                 });
-
-
         }
-
-
     }
 
 
@@ -162,13 +159,13 @@ export const Play = () => {
    
    
     // Fetch user's monster (keep existing code)
-    useEffect(() => {
+   useEffect(() => {
         const fetchUserMonster = async () => {
             try {
-                setDebugInfo("Checking localStorage...");
+                setDebugInfo("Getting user from Supabase...");
 
-                const user = JSON.parse(localStorage.getItem("thrashland_user"));
-                console.log("User from localStorage:", user);
+                const { data: { user } } = await supabase.auth.getUser();
+                console.log("User from Supabase:", user);
                 setDebugInfo(`User found: ${user ? user.id : 'No user'}`);
 
                 if (user?.id) {
@@ -181,10 +178,11 @@ export const Play = () => {
                         const latestArt = userArt[userArt.length - 1];
                         console.log("Latest art:", latestArt);
 
-                        const selectedColor = latestArt.favColorChoiceId;
-                        const selectedMusic = latestArt.favMusicChoiceId;
-                        const selectedEmotion = latestArt.currentEmotionChoiceId;
-                        const selectedAdjective = latestArt.adjectiveChoiceId;
+                        // ✅ CHANGE 3: Update to snake_case column names
+                        const selectedColor = latestArt.fav_color_choice_id;
+                        const selectedMusic = latestArt.fav_music_choice_id;
+                        const selectedEmotion = latestArt.current_emotion_choice_id;
+                        const selectedAdjective = latestArt.adjective_choice_id;
 
                         const monsterId = selectedColor + selectedMusic + selectedEmotion + selectedAdjective;
 
@@ -222,6 +220,7 @@ export const Play = () => {
 
         fetchUserMonster();
     }, []);
+
 
     
     

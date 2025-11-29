@@ -1,14 +1,14 @@
-import { useState, useEffect, } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getUserArtById, getUserById } from "../../fetches/UserFetches.jsx";
 import { DeleteFetch } from "../../fetches/DeleteFetch.jsx";
 import { updateUserBio, updateUserEmail } from "../../fetches/userProfileFetches.jsx";
 import { updateUserName } from "../../fetches/userProfileFetches.jsx";
+import { supabase } from "../../supabaseClient";
 import "./UserProfile.css";
 import { getMonsterById } from "../../fetches/MonsterFetch.jsx"
 
 export const UserProfile = () => {
-
     const [user, setUser] = useState({});
     const [bio, setBio] = useState("");
     const [isEditingBio, setIsEditingBio] = useState(false);
@@ -18,105 +18,97 @@ export const UserProfile = () => {
     const [userArt, setUserArt] = useState([]);
     const [email, setEmail] = useState("");
     const [monster, setMonster] = useState(null);
-
-
     const navigate = useNavigate();
 
     useEffect(() => {
-        const userId = JSON.parse(localStorage.getItem("thrashland_user"))?.id;
-        if (userId) {
-            getUserById(userId).then((data) => {
-                setUser(data[0]);
-                setBio(data[0]?.bio || "");
-                setName(data[0]?.name || "");
-                setEmail(data[0]?.email || "");
-            });
+        const loadUserData = async () => {
+            // Get user from Supabase Auth
+            const { data: { user: authUser } } = await supabase.auth.getUser();
+            
+            if (authUser) {
+                const userId = authUser.id;
+                
+                // Get user profile data
+                getUserById(userId).then((data) => {
+                    setUser(data[0]);
+                    setBio(data[0]?.bio || "");
+                    setName(data[0]?.name || "");
+                    setEmail(data[0]?.email || "");
+                });
 
-            getUserArtById(userId).then(artData => {
-                setUserArt(artData);
-                if (artData && artData.length > 0) {
-                    const firstArt = artData[0];
-                    const monsterId = firstArt.favMusicChoiceId + firstArt.favColorChoiceId +
-                        firstArt.currentEmotionChoiceId + firstArt.adjectiveChoiceId;
-                    getMonsterById(monsterId).then(monsterArray => {
-                        if (monsterArray && monsterArray.length > 0) {
-                            setMonster(monsterArray[0].url);
-                        }
-                    });
-                }
-            });
-        }
+                // Get user art
+                getUserArtById(userId).then(artData => {
+                    setUserArt(artData);
+                    if (artData && artData.length > 0) {
+                        const firstArt = artData[0];
+                        const monsterId = firstArt.fav_music_choice_id + firstArt.fav_color_choice_id +
+                            firstArt.current_emotion_choice_id + firstArt.adjective_choice_id;
+                        getMonsterById(monsterId).then(monsterArray => {
+                            if (monsterArray && monsterArray.length > 0) {
+                                setMonster(monsterArray[0].url);
+                            }
+                        });
+                    }
+                });
+            }
+        };
+        
+        loadUserData();
     }, []);
 
-
-    useEffect(() => {
-        const userId = JSON.parse(localStorage.getItem("thrashland_user"))?.id;
-        if (userId) {
-            getUserById(userId).then((data) => {
-                setUser(data[0]);
-                setBio(data[0]?.bio || "");
-                setName(data[0]?.name || "");
-                setEmail(data[0]?.email || "");
-
-            });
-            getUserArtById(userId).then(artData => {
-                setUserArt(artData);
-            });
-
-        }
-
-    }, []);
-
-    const handleSaveBio = () => {
-        const userId = JSON.parse(localStorage.getItem("thrashland_user"))?.id;
+    const handleSaveBio = async () => {
+        const { data: { user: authUser } } = await supabase.auth.getUser();
+        const userId = authUser?.id;
 
         updateUserBio(userId, bio)
             .then(updatedUser => {
                 setUser(updatedUser);
                 setIsEditingBio(false);
             })
-
     };
 
-    const handleSaveName = () => {
-        const userId = JSON.parse(localStorage.getItem("thrashland_user"))?.id;
+    const handleSaveName = async () => {
+        const { data: { user: authUser } } = await supabase.auth.getUser();
+        const userId = authUser?.id;
 
         updateUserName(userId, name)
             .then(updatedUser => {
                 setUser(updatedUser);
                 setIsEditingName(false);
             })
-
     };
-    const handleSaveEmail = () => {
-        const userId = JSON.parse(localStorage.getItem("thrashland_user"))?.id;
+
+    const handleSaveEmail = async () => {
+        const { data: { user: authUser } } = await supabase.auth.getUser();
+        const userId = authUser?.id;
 
         updateUserEmail(userId, email)
             .then(updatedUser => {
                 setUser(updatedUser);
                 setIsEditingEmail(false);
             })
-
-
     };
-    const handleDeleteArt = async (artId) => {
 
+    const handleDeleteArt = async (artId) => {
         await DeleteFetch(artId);
-        const userId = JSON.parse(localStorage.getItem("thrashland_user"))?.id;
+        
+        const { data: { user: authUser } } = await supabase.auth.getUser();
+        const userId = authUser?.id;
+        
         if (userId) {
             getUserArtById(userId).then(artData => {
                 setUserArt(artData);
             });
-        };
+        }
     }
 
     const handleViewArt = (art) => {
         navigate("/view-art", {
             state: {
-                selectedColor: art.favColorChoiceId,
-                selectedMusic: art.favMusicChoiceId,
-                selectedEmotion: art.currentEmotionChoiceId,
-                selectedAdjective: art.adjectiveChoiceId,
+                selectedColor: art.fav_color_choice_id,
+                selectedMusic: art.fav_music_choice_id,
+                selectedEmotion: art.current_emotion_choice_id,
+                selectedAdjective: art.adjective_choice_id,
                 title: art.title,
                 id: art.id
             }
@@ -127,20 +119,16 @@ export const UserProfile = () => {
         navigate('/community');
     };
 
-
     return (
         <div className="user-profile-container">
             <div className="profile-header">Profile</div>
             <div className="user-profile">
-
                 <div className="user-details">
                     <div className="name" >
                         <div className="name-label">Name:</div>
                         <div className="name-section">
                             {isEditingName ? (
-
                                 <div className="name-container">
-
                                     <input className="editname"
                                         value={name}
                                         onChange={(event) => setName(event.target.value)}
@@ -159,35 +147,26 @@ export const UserProfile = () => {
                                         Edit
                                     </button>
                                 </div>
-
                             )}
                         </div>
                     </div>
                     <div className="score-display" >
                         <div className="score-title">Score:</div>
-                        <div className = "score-container">
-
-                        <div className="score-value">
-                            {user.total_score || 0}
+                        <div className="score-container">
+                            <div className="score-value">
+                                {user.total_score || 0}
+                            </div>
+                            <div className="community-post">
+                                <button onClick={handleComPost} className="btn-post">
+                                    Scoreboard
+                                </button>
+                            </div>
                         </div>
-
-                        <div className="community-post">
-
-                            <button onClick={handleComPost} className="btn-post"
-                            >
-                                Scoreboard
-                            </button>
-
-                        </div>
-                    </div>
-
-
                     </div>
                 </div>
 
-
                 <div className="user-art-section">
-                      <div className="email">
+                    <div className="email">
                         <div className="email-label">Email:</div>
                         <div className="email-section">
                             {isEditingEmail ? (
@@ -214,8 +193,7 @@ export const UserProfile = () => {
                             )}
                         </div>
                     </div>
-                     <div className="bio">
-
+                    <div className="bio">
                         <div className="bio-container">
                             <div className="bio-header">Bio:</div>
                             <div className="bio-section">
@@ -245,11 +223,8 @@ export const UserProfile = () => {
                             </div>
                         </div>
                     </div>
-                    
-                   
-                  
-                   
                 </div>
+                
                 <div className="right-side">
                     <div className="art-header">BEAST:</div>
                     <div className="art-description">
@@ -280,27 +255,18 @@ export const UserProfile = () => {
                                         Loading...
                                     </div>
                                 )}
-
-
                                 <div className="art-title">{userArt[0].title}</div>
                                 <div className="art-action-delete">
                                     <button onClick={() => handleDeleteArt(userArt[0].id)} className="btn-prod">Delete</button>
                                     <button onClick={() => handleViewArt(userArt[0])} className="btn-proview">View</button>
                                 </div>
                             </div>
-
                         ) : (
                             <div className="noArt">No art created yet. <Link to="/UserArtChoice">Create your first art!</Link></div>
-
                         )}
                     </div>
-                   
                 </div>
-
-
-
-
             </div>
-        </div >
+        </div>
     );
 }
