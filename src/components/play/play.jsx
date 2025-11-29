@@ -4,7 +4,7 @@ import { getMonsterById } from '../../fetches/MonsterFetch.jsx';
 import { addToUserScore } from '../../fetches/scoreFetches.jsx';
 import './mario.css';
 import { scorePut } from '../../fetches/scorePost.jsx';
-import { supabase } from '../../supabaseClient.jsx';
+import { supabase } from '../../supabaseClient';
 
 export const Play = () => {
     // Game container reference
