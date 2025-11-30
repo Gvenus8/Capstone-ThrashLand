@@ -4,27 +4,27 @@
         
     }
 
-    1% {
+    10% {
 
         background-image: url('/images/liveText.png');
       
      
     }
 
-    10% {
+    20% {
         background-image: url('/images/fastText.png');
        
     }  
 
 
-    20% {
+    30% {
 
        background-image: url('/images/thrashText.png');
 
     }
 
 
-    30% {
+    40% {
         background-image: url('/images/hardText.png');
        
     }
