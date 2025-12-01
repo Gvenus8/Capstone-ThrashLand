@@ -4,3 +4,18 @@
   text-align: center;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+/* Touch-friendly buttons */
+button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}

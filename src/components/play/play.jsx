@@ -23,6 +23,8 @@ export const Play = () => {
     const [timeLeft, setTimeLeft] = useState(60);
     const [gameWon, setGameWon] = useState(false);
     const [screenShake, setScreenShake] = useState(0); // ✅ NEW: Visual feedback
+    const [isMobile, setIsMobile] = useState(false);
+   
     const navigate = useNavigate();
    
     // GAME CONSTANTS
@@ -124,7 +126,20 @@ export const Play = () => {
                 .catch(error => console.error("Failed to save score:", error));
         }
     };
-
+    useEffect(() => {
+    const checkMobile = () => {
+        const isMobileDevice = window.innerWidth < 768 || 'ontouchstart' in window;
+        setIsMobile(isMobileDevice);
+    };
+    
+    checkMobile(); // Check on mount
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+}, []);
+    const handleTouchButton = (key, isPressed) => {
+    keysRef.current[key] = isPressed;
+};
     // Timer countdown
     useEffect(() => {
         if (!gameStarted || gameOver || gameWon) return;
@@ -688,6 +703,92 @@ useEffect(() => {
                     </div>
                 </div>
             </div>
+         {isMobile && (
+                <div style={{
+                    position: 'fixed',
+                    bottom: '120px',
+                    left: '0',
+                    right: '0',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    padding: '0 20px',
+                    zIndex: 10000,
+                    pointerEvents: gameStarted && !gameOver && !gameWon ? 'auto' : 'none',
+                    opacity: gameStarted && !gameOver && !gameWon ? 1 : 0.3
+                }}>
+                    {/* Left side - Movement buttons */}
+                    <div style={{ display: 'flex', gap: '10px' }}>
+                        <button
+                            onTouchStart={() => handleTouchButton('ArrowLeft', true)}
+                            onTouchEnd={() => handleTouchButton('ArrowLeft', false)}
+                            style={{
+                                width: '300px',
+                                height: '200px',
+                                fontSize: '102px',
+                                textAlign: 'center',
+                                backgroundColor: 'rgba(255, 49, 49, 0.8)',
+                                border: '3px solid #fff',
+                                borderRadius: '15px',
+                                color: 'white',
+                                fontWeight: 'bold',
+                                touchAction: 'none',
+                                userSelect: 'none',
+                                WebkitTapHighlightColor: 'transparent',
+                                boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
+                                marginLeft: '160px'
+                            }}
+                        >
+                            ←
+                        </button>
+                        
+                        <button
+                            onTouchStart={() => handleTouchButton('ArrowRight', true)}
+                            onTouchEnd={() => handleTouchButton('ArrowRight', false)}
+                            style={{
+                                width: '300px',
+                                height: '200px',
+                                fontSize: '102px',
+                                textAlign: 'center',
+                                backgroundColor: 'rgba(255, 49, 49, 0.8)',
+                                border: '3px solid #fff',
+                                borderRadius: '15px',
+                                color: 'white',
+                                fontWeight: 'bold',
+                                touchAction: 'none',
+                                userSelect: 'none',
+                                WebkitTapHighlightColor: 'transparent',
+                                boxShadow: '0 4px 10px rgba(0,0,0,0.3)'
+                            }}
+                        >
+                            →
+                        </button>
+                    </div>
+
+                    {/* Right side - Jump button */}
+                    <button
+                        onTouchStart={() => handleTouchButton('Space', true)}
+                        onTouchEnd={() => handleTouchButton('Space', false)}
+                        style={{
+                            width: '300px',
+                            height: '200px',
+                            fontSize: '88px',
+                            textAlign: 'center',
+                            backgroundColor: 'rgba(255, 215, 0, 0.9)',
+                            border: '3px solid #fff',
+                            borderRadius: '15px',
+                            color: 'white',
+                            fontWeight: 'bold',
+                            touchAction: 'none',
+                            userSelect: 'none',
+                            WebkitTapHighlightColor: 'transparent',
+                            boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
+                            marginRight: '160px'
+                        }}
+                    >
+                       ↑
+                    </button>
+                </div>
+            )}
         </div>
     );
 };
