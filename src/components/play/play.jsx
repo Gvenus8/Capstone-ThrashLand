@@ -735,7 +735,7 @@ useEffect(() => {
                                 userSelect: 'none',
                                 WebkitTapHighlightColor: 'transparent',
                                 boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
-                                marginLeft: '160px'
+                                marginLeft: '15px'
                             }}
                         >
                             ←
